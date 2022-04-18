@@ -1,0 +1,21 @@
+﻿@model Student
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Student Details";
+
+}
+
+
+    <div class="card m-auto mt-5" style="width: 18rem;">
+  <img src="~/images/@Model.StdImg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">@Model.Name</h5>
+    <ul class="card-text">
+        <li> @Model.Age</li>
+        <li> @Model.Department.Name</li>
+
+    </ul>
+    <a asp-action="Index" class="btn btn-primary">Go Back To List</a>
+  </div>
+</div>
+

@@ -1,0 +1,75 @@
+﻿@model Student
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Student Create";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row g-0">
+            <form  method="post" class="m-auto mt-4" style="max-width: 30rem; padding: 10px; border-radius: 10px; border:1px solid rgba(0,0,0,0.2);" enctype="multipart/form-data">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" placeholder="Name"/>
+                <span asp-validation-for="Name" ></span>
+                <br/><br/> 
+                
+                
+                <label asp-for="Age"></label>
+                <input asp-for="Age" placeholder="Age"/>
+                <span asp-validation-for="Age" ></span>
+                <br/><br/>   
+
+                <label asp-for="DeptId"></label>
+                    <select asp-for="DeptId" asp-items="ViewBag.depts">
+                    </select>
+                <br/><br/>
+
+                <label asp-for="StdImg"></label>
+                <input type="file" name="stdimg"/>
+                <div asp-validation-summary=ModelOnly></div>
+                <br/><br/>
+                
+                <label asp-for="Email"></label>
+                <input asp-for="Email"/>
+                <span asp-validation-for="Email"></span>
+                <br/><br/>
+
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName"/>
+                <span asp-validation-for="UserName"></span>
+                <br/><br/>
+
+                <label asp-for="Password"></label>
+                <input asp-for="Password"/>
+                <span asp-validation-for="Password"></span>
+
+                <br/><br/>
+
+                <label asp-for="CPassword"></label>
+                <input asp-for="CPassword"/>
+                <span asp-validation-for="CPassword"></span>
+                <br/><br/>
+
+                
+                
+                <input type="submit" value="add" class="btn btn-success mt-2 mb-2" style="margin: 15px;"/>
+            </form>
+        </div>
+    </div>
+   @section scripts{
+       <partial name="_ValidationScriptsPartial"/>
+   }
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@model Department 
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Department Delete";
+
+}
+
+
+    <div class="container">
+        <div class="row g-0" style="min-height: 75vh;">
+            <div class="card" style="width: 18rem;"class="m-auto mx-4;">
+              <div class="card-body">
+                <h5 class="card-title">@Model.Name </h5>
+                <h6 class="card-subtitle mb-2 text-muted">@Model.Capacity</h6>
+                <p class="card-text">Are you sure You want to delete this department ... </p>
+              </div>
+            </div>
+            <form method="post" class="">
+                <input asp-for="DeptId" type="hidden"/>
+                <input type="submit" class="btn btn-danger" value="delete"/>
+            </form>
+        </div>
+    </div>
+

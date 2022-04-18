@@ -1,0 +1,17 @@
+﻿@model Department;
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Department Edit";
+
+}
+
+
+    <div class="container m-auto mx-4" >
+        <form method="post" style="min-height: 75vh;">
+            <input asp-for="DeptId" type="hidden"/>
+            <input asp-for="Name" placeholder="dept.Name"/><br/><br/>
+            <input asp-for="Capacity" placeholder="dept.Capacity"/><br/><br/>
+            <input class="btn btn-success"type="submit" value="update"/>
+        </form>
+    </div>
+

@@ -1,0 +1,43 @@
+﻿@model List<Department>
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Department List";
+}
+
+
+    <div class="container">
+
+        <div class="row g-0">
+        <a asp-action="create"  asp-controller = "department" class="btn btn-primary col-3 mt-3 mb-3 ">Create New Department</a> 
+
+        <table class="table table-bordered table-hover m-auto my-3" >
+        <thead>
+            <th>DeptId</th>
+            <th>Name</th>
+            <th>Capacity</th>
+            <th>Operation</th>
+
+        </thead>
+        <tbody>
+            @foreach(var item in @Model)
+            {
+                <tr>
+                <td>@item.DeptId</td>
+                <td>@item.Name</td>
+                <td>@item.Capacity</td>
+                <td>
+                    <a class="btn btn-info m-2" asp-action="ShowDetails" asp-route-id="@item.DeptId">Details</a>
+                    <a class="btn btn-success m-2" asp-action="Edit" asp-route-id="@item.DeptId">Edit</a>
+                    <a class="btn btn-danger m-2" asp-action="Delete" asp-route-id="@item.DeptId">Delete</a>
+
+                </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+

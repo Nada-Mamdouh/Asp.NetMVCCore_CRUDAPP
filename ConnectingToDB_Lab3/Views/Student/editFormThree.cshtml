@@ -1,0 +1,59 @@
+﻿@model Student
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Student Edit Form3";
+
+}
+
+
+    <div class="container">
+        <div class="row g-0" style="min-height: 75vh;">
+            <form asp-action="edit" asp-controller="student" class="m-auto mt-4" enctype="multipart/form-data" style="min-width: 50rem; margin: 20 auto;max-width: 400px; padding: 10px; border-radius: 10px; border:1px solid rgba(0,0,0,0.2); ">
+
+                <input asp-for="Id" Placeholder="@Model.Id" value="@Model.Id" type="hidden"/>
+               
+
+            <input asp-for="Name" placeholder="@Model.Name" type="hidden" value="@Model.Name"/>
+                
+
+                <input asp-for="Age" placeholder="@Model.Age" type="hidden" value="@Model.Age"/>
+               
+
+                <input asp-for="DeptId" hidden value="@Model.DeptId"/>
+                    
+               
+
+                <input asp-for="@Model.Email" placeholder="@Model.Email" type="hidden"/>
+                <span asp-validation-for="Email"></span>
+                
+
+                <input asp-for="@Model.UserName" placeholder="@Model.UserName" type="hidden"/>
+                <span asp-validation-for="UserName"></span>
+                
+
+        
+                <input asp-for="@Model.Password" placeholder="@Model.Password" type="hidden"/>
+
+               
+
+                
+                <input asp-for="@Model.CPassword" type="hidden"/>
+                <span asp-validation-for="CPassword" ></span>
+                
+
+                 <label asp-for="@Model.StdImg"></label>
+                <input type="file" name="stdimg"/>
+                <div asp-validation-summary=ModelOnly></div>
+                <br/><br/>
+            <input type="submit" value="Update" class="btn btn-success mt-2 mb-2" style="margin: 20px 0px ;"/>
+
+            </form>
+        </div>
+    </div>
+     
+
+    
+    @section scripts{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+

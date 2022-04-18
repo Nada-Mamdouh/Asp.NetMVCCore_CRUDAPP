@@ -1,0 +1,26 @@
+﻿@model Student
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Student Delete";
+
+}
+
+
+     <div class="container">
+       <div class="row g-0">
+           <div class="card m-auto" style="width: 18rem;">
+          <img src="/images/@Model.StdImg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">@Model.Name </h5>
+            <h6 class="card-subtitle mb-2 text-muted">@Model.Age</h6>
+            <p class="card-text">Are you sure You want to remove this student ...</p>
+        
+          </div>
+        </div>
+        <form method="post"  class="m-auto">
+            <input asp-for="DeptId" type="hidden"/>
+            <input class="btn btn-primary " style="margin: 25px 350px;" type="submit" value="delete"/>
+        </form>
+        </div>
+    </div>
+

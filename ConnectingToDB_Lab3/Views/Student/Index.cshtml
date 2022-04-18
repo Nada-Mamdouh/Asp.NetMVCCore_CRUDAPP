@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Student>
+@{
+    //Layout = "_Layout2";
+    ViewBag.Title="Student List";
+}
+
+
+    <div class="container" style="min-height: 75vh;">
+    <div class="row g-0">
+    <a asp-action="create"  asp-controller = "student" class="btn btn-primary col-3 mt-3 mb-3">Add new student</a> 
+    @if(Model.Count()>0){
+         <table class="table table-bordered table-hover m-auto my-3" >
+        <thead>
+            <th>StudentId</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Dept</th>
+            <th>StdImg</th>
+            <th>Operations</th>
+
+
+        </thead>
+        <tbody>
+            @foreach(var item in @Model)
+            {
+                <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Department?.Name</td>
+                <td><img src="images/@item.StdImg" width="50" height="50" style="border-radius:25px;"/> </td>
+
+
+                <td>
+                    <a class="btn btn-info m-2" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-success m-2" asp-action="editFormOne" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-danger m-2" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+    } else{
+        <h1>No Students Here Yet</h1>
+
+    }
+    
+       
+    </div>
+    </div>
