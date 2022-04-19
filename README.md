@@ -4,5 +4,9 @@ This is a simple CRUD app consists of CRUD operations for departments and studen
 CRUD operations on students including uploading image for each student...<br/>
 In the demo I hosted the app and the database on azure for learning purposes but the code above works on local host ....<br/>
 
-https://user-images.githubusercontent.com/85319019/163893735-49960af9-447c-42cf-91b9-d65c182dd707.mp4
+
+
+
+
+https://user-images.githubusercontent.com/85319019/163895432-2ca71745-ab43-4324-90c7-b108ed364024.mp4
 
